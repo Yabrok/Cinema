@@ -12,14 +12,27 @@
 
 <body class="bg-warning">
     <section class="pt-5">
-        <h1 class="mb-4 text-center display-4 js-title">
+        <h1 class="mb-5 text-center display-4 js-title">
             Cinema
         </h1>
-        <form class="w-25 mx-auto js-form">
-            <div class="input-group mb-3">
+        <form class="w-75 mx-auto js-form d-flex justify-content-between mb-5">
+            <div class="w-25 input-group mb-0">
                 <input type="text" class="form-control js-input" placeholder="Search film.." aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn bg-danger" type="button" style="color: #fff;">Search</button>
               </div>
+              <select class="w-25 form-select js-select">
+                <option value="Category" selected disabled>
+                    Category
+                </option>
+                <option value="All">All</option>
+              </select>
+
+              <select class="form-select w-25 js-select_2">
+                <option selected disabled>Filter</option>
+                <option value="0">All</option>
+                <option value="a-z">A-Z</option>
+                <option value="z-a">Z-A</option>
+              </select>
         </form>
         <div class="container-fluid">
             <ul class="js-list" style="flex-wrap: wrap; list-style-type: none; gap: 20px; justify-content: center;">
