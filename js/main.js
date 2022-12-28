@@ -94,7 +94,7 @@ elForm.addEventListener('input', () => {
 
 elSelect2.addEventListener('change', () => {
 
-    if (elSelect2.value != '0'){
+    if (elSelect2.value != '0') {
         if (elSelect2.value == 'a-z') {
             let aToz = films.sort((a, b) => {
                 return a.title.toLowerCase().charCodeAt(0) - b.title.toLowerCase().charCodeAt(0);
@@ -107,8 +107,30 @@ elSelect2.addEventListener('change', () => {
             })
             render(zToa);
         }
-    }else {
+    } else {
         render(films);
     }
-    
+
 })
+
+const modeBtn = document.querySelector('.js-modebtn');
+
+let theme = false;
+
+modeBtn.addEventListener('click', () => {
+    theme = !theme;
+    const bg = theme ? 'dark' : 'light';
+    window.localStorage.setItem('theme', bg);
+    changeMode()
+
+})
+
+function changeMode() {
+    if (window.localStorage.getItem('theme') == 'dark') {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark')
+    }
+}
+changeMode()
+
